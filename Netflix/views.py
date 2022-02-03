@@ -97,7 +97,11 @@ def MovieDetails(request, movie_id):
     movie_details_results = movie_details_request.json()
     movie_details = movie_details_results
 
-    return render(request, 'Movie Details.html', {'movie_details':movie_details, 'movie_id':movie_id})
+    movie_video_request = requests.get("https://api.themoviedb.org/3/movie/" + str(movie_id) + "/videos?api_key=" + TMDB_API_KEY)
+    movie_video_results = movie_video_request.json()
+    movie_videos = movie_video_results['results']
+
+    return render(request, 'Movie Details.html', {'movie_details':movie_details, 'movie_id':movie_id, 'movie_videos':movie_videos})
 
 @login_required(login_url='Login')
 def TVDetails(request, tv_id):

@@ -54,7 +54,7 @@ def Login(request):
 
         if user is not None:
             login(request, user)
-            return redirect(reverse('Home'))
+            return redirect(reverse('Recommendations'))
         
     return render(request, 'Login.html')
 
@@ -65,5 +65,5 @@ def Logout(request):
     return redirect(reverse('Login'))
 
 @login_required(login_url='Login')
-def Profile(request):
-    return render(request, 'Profile.html')
+def Recommendations(request):
+    return render(request, 'Recommendations.html')

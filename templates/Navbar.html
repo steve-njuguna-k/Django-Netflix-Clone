@@ -14,9 +14,15 @@
                     
                 </ul>
                 <div class="d-flex">
-                    <a class="link" href="{% url 'Login' %}" name="Login">
-                        <button class="btn btn-danger btn-md">Sign In</button>
-                    </a>
+                    {% if user.is_authenticated %}
+                        <a class="link" href="{% url 'Logout' %}" name="Logout">
+                            <button class="btn btn-danger btn-md">Logout</button>
+                        </a>
+                    {% else %}
+                        <a class="link" href="{% url 'Login' %}" name="Login">
+                            <button class="btn btn-danger btn-md">Sign In</button>
+                        </a>
+                    {% endif %}
                 </div>
             </div>
         </div>

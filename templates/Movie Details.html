@@ -1,0 +1,125 @@
+{% extends "Base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="container-fluid">
+            {% include 'Navbar.html' %}
+        </div>
+    </div>
+    <div class="container movie-details-header">
+        <div class="row">
+            <div class="col-sm-4 text-center">
+                <img src="https://image.tmdb.org/t/p/w500/{{ movie_details.poster_path }}" height="500">
+            </div>
+            <div class="col-sm-8">
+                <h1 class="py-4">{{ movie_details.original_title }}</h1>
+                <p>{{ movie_details.overview }}</p>
+                <h5 class="float-right"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(252, 180, 0, 1);transform: ;msFilter:;"><path d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z"></path></svg> {{ movie_details.vote_average }}</h5>
+                <br>
+                <p><span class="text-muted">Date Released:</span> {{ movie_details.release_date }}</p>
+                <p><span class="text-muted">Duration:</span> {{ movie_details.runtime }}mins</p>
+                <p><span class="text-muted">Genre:</span> {% for genre in movie_details.genres %} {{ genre.name }}, {% endfor %}</p>
+                <p><span class="text-muted">Budget:</span> {{ movie_details.budget }}</p>
+                <p><span class="text-muted">Revenue:</span> {{ movie_details.revenue }}</p>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="page-footer font-small unique-color-dark">
+
+      <!-- Footer Links -->
+      <div class="container text-center text-md-left mt-5">
+
+        <!-- Grid row -->
+        <div class="row mt-3">
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+            <!-- Links -->
+            <p>
+              <a href="#!">FAQ</a>
+            </p>
+            <p>
+              <a href="#!">Investor Relations</a>
+            </p>
+            <p>
+              <a href="#!">Privacy</a>
+            </p>
+            <p>
+              <a href="#!">Speed Test</a>
+            </p>
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+            <!-- Links -->
+            <p>
+              <a href="#!">Help Center</a>
+            </p>
+            <p>
+              <a href="#!">Jobs</a>
+            </p>
+            <p>
+              <a href="#!">Cookie Preferences</a>
+            </p>
+            <p>
+              <a href="#!">Legal Notices</a>
+            </p>
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+            <!-- Links -->
+            <p>
+              <a href="#!">Account</a>
+            </p>
+            <p>
+              <a href="#!">Ways to Watch</a>
+            </p>
+            <p>
+              <a href="#!">Corporate Information</a>
+            </p>
+            <p>
+              <a href="#!">Only on Netflix</a>
+            </p>
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+            <!-- Links -->
+            <p>
+              <a href="#!">Media Center</a>
+            <p>
+              <a href="#!">Terms of Use</a>
+            <p>
+              <a href="#!">Contact Us</a>
+
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+
+      </div>
+      <!-- Footer Links -->
+
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">© 2022 Copyright
+        <a href="https://github.com/steve-njuguna-k/Django-Netflix-Clone" target="_blank"> Django Netflix Clone</a>
+      </div>
+      <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->   
+{% endblock %}

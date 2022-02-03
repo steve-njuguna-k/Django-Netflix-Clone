@@ -90,3 +90,19 @@ def Recommendations(request):
     upcoming = upcoming_results['results']
 
     return render(request, 'Recommendations.html', {'now_playing_movies':now_playing_movies, 'top_rated_shows':top_rated_shows, 'top_rated':top_rated, 'upcoming':upcoming, 'popular_tv':popular_tv})
+
+@login_required(login_url='Login')
+def MovieDetails(request, movie_id):
+    movie_details_request = requests.get("https://api.themoviedb.org/3/movie/" + str(movie_id) + "?api_key=" + TMDB_API_KEY)
+    movie_details_results = movie_details_request.json()
+    movie_details = movie_details_results
+
+    return render(request, 'Movie Details.html', {'movie_details':movie_details, 'movie_id':movie_id})
+
+@login_required(login_url='Login')
+def TVDetails(request, tv_id):
+    tv_details_request = requests.get("https://api.themoviedb.org/3/tv/" + str(tv_id)  + "?api_key=" + TMDB_API_KEY)
+    tv_details_results = tv_details_request.json()
+    tv_details = tv_details_results['results']
+
+    return render(request, 'TV Details.html', {'tv_details':tv_details})

@@ -8,11 +8,11 @@
         </div>
     </div>
     <div class="container-fluid movie-show-section">
-        <h5>Trending Now</h5>
+        <h5><b>Trending Now</b></h5>
         <div class="row">
             {% for now_playing in now_playing_movies|slice:":4" %}
             <div class="col-sm-3 mb-3 d-flex align-items-stretch">
-                <a href="#">
+                <a href="{% url 'MovieDetails' now_playing.id %}">
                     <img src="https://image.tmdb.org/t/p/w500/{{ now_playing.poster_path }}" class="fluid img-thumbnail">
                 </a>
             </div>
@@ -20,7 +20,7 @@
         </div>
     </div>
     <div class="container-fluid movie-show-section">
-        <h5>Critically Aclaimed TV Shows</h5>
+        <h5><b>Critically Aclaimed TV Shows</b></h5>
         <div class="row">
             {% for tv_show in top_rated_shows|slice:":4" %}
             <div class="col-sm-3 mb-3 d-flex align-items-stretch">
@@ -32,7 +32,7 @@
         </div>
     </div>
     <div class="container-fluid movie-show-section">
-        <h5>Top Picks</h5>
+        <h5><b>Top Picks</b></h5>
         <div class="row">
             {% for top in top_rated|slice:":4" %}
             <div class="col-sm-3 mb-3 d-flex align-items-stretch">
@@ -44,7 +44,7 @@
         </div>
     </div>
     <div class="container-fluid movie-show-section" style="margin-bottom: 50px;">
-        <h5>Must Watch Shows</h5>
+        <h5><b>Must Watch Shows</b></h5>
         <div class="row">
             {% for popular in popular_tv|slice:":4" %}
             <div class="col-sm-3 mb-3 d-flex align-items-stretch">
@@ -56,7 +56,7 @@
         </div>
     </div>
     <div class="container-fluid movie-show-section">
-        <h5>Watch It Again</h5>
+        <h5><b>Watch It Again</b></h5>
         <div class="row">
             {% for upcoming in upcoming|slice:":4" %}
             <div class="col-sm-3 mb-3 d-flex align-items-stretch">

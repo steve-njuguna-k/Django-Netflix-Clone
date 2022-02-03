@@ -1,0 +1,25 @@
+{% load static %}
+{% block navbar %}
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a href="{% url 'Home' %}" name="Home">
+                <img src={% static "assets/img/logo.png" %} width="150">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav mx-auto">
+                    
+                </ul>
+                <div class="d-flex">
+                    <a class="link" href="https://github.com/steve-njuguna-k" target="_blank">
+                        <button class="btn btn-danger btn-md">Sign Up</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+{% endblock %}

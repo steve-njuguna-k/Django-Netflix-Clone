@@ -158,3 +158,5 @@ import django_heroku
 django_heroku.settings(locals())
 
 DISABLE_COLLECTSTATIC = os.environ.get('DISABLE_COLLECTSTATIC') 
+
+TMDB_API_KEY = os.environ.get('API_KEY')

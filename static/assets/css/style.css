@@ -89,7 +89,6 @@ a:hover{
     padding-bottom: 100px;
     padding-left: 100px;
     padding-right: 100px;
-    border-bottom: 8px solid #222;
 }
 
 accordion-item:first-of-type {
@@ -343,4 +342,21 @@ accordion-item:first-of-type {
     appearance: none;
     border-radius: 0.25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.movie-show-section{
+    padding-left: 20px;
+    padding-top: 50px;
+}
+
+.page-footer{
+    border-top: 8px solid #222;
+}
+
+.img-thumbnail {
+    background-color: #000000;
+    border: 1px solid #000000;
+    border-radius: 0.25rem;
+    max-width: 100%;
+    height: auto;
 }

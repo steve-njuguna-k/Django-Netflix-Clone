@@ -9,10 +9,12 @@
       <center>
         <div class="container">
           <div class="hero-text">
-            <b><h1 class="display-4">Unlimited movies, TV shows, and more.</h1></b>
+            <b><h1 class="landing-title">Unlimited movies, TV shows, and more.</h1></b>
             <p class="hero-p">Watch anywhere. Cancel anytime.</p>
             <p>Ready to watch? Enter your email to create or restart your membership.</p>
-            <button class="btn btn-danger btn-lg">Get Started</button>
+            <a href="{% url 'Register' %}" name="Register">
+              <button class="btn btn-danger btn-lg">Get Started</button>
+            </a>
           </div>
         </div>
       </center>

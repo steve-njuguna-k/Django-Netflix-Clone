@@ -3,16 +3,48 @@
 
 {% block content %}
     <div class="jumbotron jumbotron-fluid">
-        <center>
-            <div class="container">
-            <div class="hero-text">
-                <b><h1 class="display-4">Unlimited movies, TV shows, and more.</h1></b>
-                <p class="hero-p">Watch anywhere. Cancel anytime.</p>
-                <p>Ready to watch? Enter your email to create or restart your membership.</p>
-                <button class="btn btn-danger btn-lg">Get Started</button>
-            </div>
-            </div>
-        </center>
+        <div class="container">
+            <center>
+                {% if messages %}
+                    {% for message in messages %} 
+                    <div class="alert {{message.tags}} m-1" role="alert" style="font-size: medium;">
+                        {{message}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {% endfor %} 
+                {% endif %}
+            </center>
+        </div>
+        <div class="login-form">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <h1 class="flex justify-content-center text-center">
+                    <a href="{% url 'Home' %}" name="Home">
+                        <img src={% static "assets/img/logo.png" %} alt="Instagram logo" title="Instagram logo" width="150"/>
+                    </a>
+                </h1>
+                <div class="panel register flex justify-content-center">
+                    <div class="hint-text text-center" style="font-size: medium;">Already Have An Account? <a href="{% url 'Login' %}" name = 'Login'>Sign In</a></div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput" class="text-black">Username</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput" class="text-black">Email Address</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput" class="text-black">Password</label>
+                </div>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-danger" type="button">Register</button>
+                  </div>
+            </form>
+        </div>
     </div>
     <!-- Footer -->
     <footer class="page-footer font-small unique-color-dark">

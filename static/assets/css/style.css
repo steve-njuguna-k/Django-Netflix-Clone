@@ -39,8 +39,9 @@ a:hover{
     border-bottom: 8px solid #222;
 }
 
-.display-4 span {
-    color: #fff;
+.landing-title{
+    font-size: 60px;
+    font-weight: bolder;
 }
 
 .hero-text {
@@ -50,24 +51,6 @@ a:hover{
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
-}
-
-.display-4{
-    color: #ffffff;
-    font-size: 65px;
-    font-weight: 400;
-    font-weight: bolder;
-}
-
-.display-4 mark{
-    background-color: #fff;
-    color: #000;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 1px;
-    padding-bottom: 1px;
-    border-radius: 20px;
-    font-weight: 900;
 }
 
 .hero-p{

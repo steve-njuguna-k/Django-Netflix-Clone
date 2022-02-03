@@ -1,0 +1,140 @@
+{% extends "Base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <center>
+                {% if messages %}
+                    {% for message in messages %} 
+                    <div class="alert {{message.tags}} m-1" role="alert" style="font-size: medium;">
+                        {{message}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {% endfor %} 
+                {% endif %}
+            </center>
+        </div>
+        <div class="login-form">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <h1 class="flex justify-content-center text-center">
+                    <img src={% static "assets/img/logo.png" %} alt="Instagram logo" title="Instagram logo" width="150"/>
+                </h1>
+                <div class="panel register flex justify-content-center">
+                    <div class="hint-text text-center" style="font-size: medium;">New to Netflix? <a href="{% url 'Register' %}" name = 'Register'>Sign Up</a></div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput" class="text-black">Email Address</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput" class="text-black">Password</label>
+                </div>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-danger" type="button">Log In</button>
+                  </div>
+            </form>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="page-footer font-small unique-color-dark">
+
+      <!-- Footer Links -->
+      <div class="container text-center text-md-left mt-5">
+
+        <!-- Grid row -->
+        <div class="row mt-3">
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+            <!-- Links -->
+            <p>
+              <a href="#!">FAQ</a>
+            </p>
+            <p>
+              <a href="#!">Investor Relations</a>
+            </p>
+            <p>
+              <a href="#!">Privacy</a>
+            </p>
+            <p>
+              <a href="#!">Speed Test</a>
+            </p>
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+            <!-- Links -->
+            <p>
+              <a href="#!">Help Center</a>
+            </p>
+            <p>
+              <a href="#!">Jobs</a>
+            </p>
+            <p>
+              <a href="#!">Cookie Preferences</a>
+            </p>
+            <p>
+              <a href="#!">Legal Notices</a>
+            </p>
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+            <!-- Links -->
+            <p>
+              <a href="#!">Account</a>
+            </p>
+            <p>
+              <a href="#!">Ways to Watch</a>
+            </p>
+            <p>
+              <a href="#!">Corporate Information</a>
+            </p>
+            <p>
+              <a href="#!">Only on Netflix</a>
+            </p>
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+            <!-- Links -->
+            <p>
+              <a href="#!">Media Center</a>
+            <p>
+              <a href="#!">Terms of Use</a>
+            <p>
+              <a href="#!">Contact Us</a>
+
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+
+      </div>
+      <!-- Footer Links -->
+
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">© 2022 Copyright
+        <a href="https://github.com/steve-njuguna-k/Django-Netflix-Clone" target="_blank"> Django Netflix Clone</a>
+      </div>
+      <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->   
+{% endblock %}

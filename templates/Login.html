@@ -7,11 +7,9 @@
             <center>
                 {% if messages %}
                     {% for message in messages %} 
-                    <div class="alert {{message.tags}} m-1" role="alert" style="font-size: medium;">
+                    <div class="alert {{message.tags}} alert-dismissible fade show" role="alert">
                         {{message}}
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                     {% endfor %} 
                 {% endif %}
@@ -29,16 +27,16 @@
                     <div class="hint-text text-center" style="font-size: medium;">New to Netflix? <a href="{% url 'Register' %}" name = 'Register'>Sign Up</a></div>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                    <label for="floatingInput" class="text-black">Email Address</label>
+                    <input type="text" class="form-control" id="floatingInput" name="username" placeholder="name@example.com">
+                    <label for="floatingInput" class="text-black">Username</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <input type="password" class="form-control" id="floatingInput" name="password" placeholder="name@example.com">
                     <label for="floatingInput" class="text-black">Password</label>
                 </div>
                 <div class="d-grid gap-2">
-                    <button class="btn btn-danger" type="button">Log In</button>
-                  </div>
+                    <button class="btn btn-danger" type="submit">Log In</button>
+                </div>
             </form>
         </div>
     </div>

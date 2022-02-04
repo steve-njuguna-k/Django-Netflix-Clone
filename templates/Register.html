@@ -4,18 +4,18 @@
 {% block content %}
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <center>
-                {% if messages %}
-                    {% for message in messages %} 
-                    <div class="alert {{message.tags}} alert-dismissible fade show" role="alert">
-                        {{message}}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                    {% endfor %} 
-                {% endif %}
-            </center>
         </div>
         <div class="sign-form">
+            <center>
+              {% if messages %}
+                  {% for message in messages %} 
+                  <div class="alert {{message.tags}} alert-dismissible fade show" role="alert">
+                    {{message}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                  {% endfor %} 
+              {% endif %}
+            </center>
             <form action="" method="POST">
                 {% csrf_token %}
                 <h1 class="flex justify-content-center text-center">

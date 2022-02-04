@@ -25,18 +25,18 @@ def Register(request):
             return redirect('Register')
 
         if User.objects.filter(username=username).exists():
-            messages.error(request, '⚠️ Username Already Exists! Choose Another One')
+            messages.error(request, '⚠️ Username Already Exists!')
             return redirect('Register')
 
         if User.objects.filter(email=email).exists():
-            messages.error(request, '⚠️ Email Address Already Exists! Choose Another One')
+            messages.error(request, '⚠️ Email Address Already Exists!')
             return redirect('Register')
 
         user = User.objects.create_user(username=username, email=email)
         user.set_password(password1)
         user.save()
 
-        messages.success(request, '✅ Regristration Successful! You can now log in.')
+        messages.success(request, '✅ Regristration Successful!')
         return redirect('Register')
 
     return render(request, 'Register.html')
@@ -49,11 +49,11 @@ def Login(request):
         user = authenticate(username=username, password=password)
 
         if not User.objects.filter(username=username).exists():
-            messages.error(request, '⚠️ Username Does Not Exist! Choose Another One')
+            messages.error(request, '⚠️ Username Does Not Exist!')
             return redirect('Login')
 
         if user is None:
-            messages.error(request, '⚠️ Username or Password Is Incorrect!! Please Try Again')
+            messages.error(request, '⚠️ Username or Password Is Incorrect!!')
             return redirect('Login')
 
         if user is not None:

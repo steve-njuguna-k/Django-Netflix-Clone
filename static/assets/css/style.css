@@ -365,3 +365,49 @@ accordion-item:first-of-type {
     padding-top: 50px;
     padding-bottom: 50px;
 }
+
+.modal-header {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #000000;
+    border-top-left-radius: calc(0.3rem - 1px);
+    border-top-right-radius: calc(0.3rem - 1px);
+}
+  
+.btn-close {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    background-color: #ffffff!important;
+    text-shadow: 0 1px 0 #fff;
+}
+  
+.btn-close:hover {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    background-color: #ffffff!important;
+    text-shadow: 0 1px 0 #fff;
+}
+
+.modal-content {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #000000;
+    background-clip: padding-box;
+    border: 1px solid #000000;
+    border-radius: 0.3rem;
+    outline: 0;
+}

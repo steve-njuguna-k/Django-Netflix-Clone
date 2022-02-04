@@ -1,3 +1,4 @@
+from unicodedata import name
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -100,13 +101,17 @@ def MovieDetails(request, movie_id):
     movie_video_request = requests.get("https://api.themoviedb.org/3/movie/" + str(movie_id) + "/videos?api_key=" + TMDB_API_KEY)
     movie_video_results = movie_video_request.json()
     movie_videos = movie_video_results['results']
+    newDict = dict()
+    for movie in movie_videos:
+        if movie['type'] == 'Trailer':
+            newDict['key'] = movie['key']
 
-    return render(request, 'Movie Details.html', {'movie_details':movie_details, 'movie_id':movie_id, 'movie_videos':movie_videos})
+    return render(request, 'Movie Details.html', {'movie_details':movie_details, 'movie_id':movie_id, 'newDict':newDict})
 
 @login_required(login_url='Login')
 def TVDetails(request, tv_id):
     tv_details_request = requests.get("https://api.themoviedb.org/3/tv/" + str(tv_id)  + "?api_key=" + TMDB_API_KEY)
     tv_details_results = tv_details_request.json()
-    tv_details = tv_details_results['results']
+    tv_details = tv_details_results
 
-    return render(request, 'TV Details.html', {'tv_details':tv_details})
+    return render(request, 'TV Details.html', {'tv_details':tv_details, 'tv_id':tv_id, })

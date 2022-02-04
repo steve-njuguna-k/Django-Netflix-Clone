@@ -24,7 +24,7 @@
         <div class="row">
             {% for tv_show in top_rated_shows|slice:":4" %}
             <div class="col-sm-3 mb-3 d-flex align-items-stretch">
-                <a href="#">
+                <a href="{% url 'TVDetails' tv_show.id %}">
                     <img src="https://image.tmdb.org/t/p/w500/{{ tv_show.poster_path }}" class="fluid img-thumbnail">
                 </a>
             </div>
@@ -36,7 +36,7 @@
         <div class="row">
             {% for top in top_rated|slice:":4" %}
             <div class="col-sm-3 mb-3 d-flex align-items-stretch">
-                <a href="#">
+                <a href="{% url 'MovieDetails' top.id %}">
                     <img src="https://image.tmdb.org/t/p/w500/{{ top.poster_path }}" class="fluid img-thumbnail">
                 </a>
             </div>
@@ -48,7 +48,7 @@
         <div class="row">
             {% for popular in popular_tv|slice:":4" %}
             <div class="col-sm-3 mb-3 d-flex align-items-stretch">
-                <a href="#">
+                <a href="{% url 'TVDetails' popular.id %}">
                     <img src="https://image.tmdb.org/t/p/w500/{{ popular.poster_path }}" class="fluid img-thumbnail">
                 </a>
             </div>
@@ -60,7 +60,7 @@
         <div class="row">
             {% for upcoming in upcoming|slice:":4" %}
             <div class="col-sm-3 mb-3 d-flex align-items-stretch">
-                <a href="#">
+                <a href="{% url 'MovieDetails' upcoming.id %}">
                     <img src="https://image.tmdb.org/t/p/w500/{{ upcoming.poster_path }}" class="fluid img-thumbnail">
                 </a>
             </div>
